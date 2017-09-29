@@ -11,10 +11,11 @@ CC := gcc
 SRC := thread.c list.c
 #OBJ := $(SRC:.c=.o)
 OBJ := $(patsubst %.c,%.o,$(SRC))
-DEP := $(patsubst %.c,.%.d,$(SRC))
+#DEP := $(patsubst %.c,.%.d,$(SRC))
 
-CFLAGS := -g -static -O0
+CFLAGS := -g -static -O3
 #CFLAGS += -I$(COMMON_LIB)/libv4l/arm_static/include
+CFLAGS += -DMULTITHREAD_TEST
 
 LIBS := -lrt -lm -lpthread
 
